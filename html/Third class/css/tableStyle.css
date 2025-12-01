@@ -1,0 +1,14 @@
+table,
+tr,
+th,
+td{ color: brown;
+border: 3px solid black;
+border-collapse:collapse;
+text-align:center;
+/* border-radius:50%;
+border-top-left-radius:30%;} */
+}
+table{
+    margin:auto;
+    width:50%;
+}
