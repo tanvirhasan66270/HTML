@@ -1,0 +1,51 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid #050df7;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: lower-roman;
+}
+
+#nav ul,
+#nav li {
+  list-style: none;
+  float: left;
+  display: flex;
+  margin: 5px;
+  color: white;
+}
+
+#nav {
+  background-color: blueviolet;
+  width: 100%;
+  height: 10vh;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: red;
+  background-color: white;
+}
