@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Number</label>
+    <input type="text" id="tanvir" />
+    <button onclick=" checkOddEvent()">submit</button> br
+
+    <label for="" id="rasult"></label>
+
+    <script>
+      function checkOddEvent() {
+        let number = document.getElementById("tanvir").value;
+        let proccedNumber = Number.parseInt(number);
+
+        if (proccedNumber % 2 == 0) {
+          document.getElementById("rasult").innerHTML = "Event";
+        } else {
+          document.getElementById("rasult").innerHTML = "odd";
+        }
+      }
+    </script>
+  </body>
+</html>
