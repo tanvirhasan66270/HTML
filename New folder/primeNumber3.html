@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let mark = prompt("Enter a number");
+      let counter = 0;
+
+      for (let i = 1; i <= mark; i++) {
+        if (mark % i == 0) {
+          counter = counter + 1;
+        }
+      }
+
+      if (counter == 2) {
+        document.writeln("it is Prime");
+      } else {
+        document.writeln("it is not Prime");
+      }
+    </script>
+  </body>
+</html>

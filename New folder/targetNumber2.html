@@ -7,11 +7,13 @@
   </head>
   <body>
     <script>
-      let number = prompt("Enter Number");
+      let userInput = prompt("input number");
+      let result = 1;
 
-      for (let i = 1; i <= 10; i++) {
-        document.writeln(number + " X " + i + " = " + number * i + "<br>");
+      for (let i = 1; i <= userInput; i++) {
+        result = result * i;
       }
+      document.writeln(result);
     </script>
   </body>
 </html>
