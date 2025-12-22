@@ -9,12 +9,12 @@
     <script>
       let userInput = prompt("Input guess Number 0-9");
       let chance = 3;
-      actualNumber=Number.parseInt(Math.random()*10)
+      actualNumber = Number.parseInt(Math.random() * 10);
       let attempt = 1;
       let answer = false;
       while (attempt < chance) {
         if (userInput == actualNumber) {
-          document.writeln( "Congratulation");                                                                                             n("Congratulation");
+          document.writeln("Congratulation");
           answer = true;
           break;
         }
