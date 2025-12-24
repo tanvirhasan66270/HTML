@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Name</label>
+    <input type="text" id="userName" /> <br>
+
+    <label for="">password</label>
+    <input type="password" id="password" /><br>
+
+    <button onclick="tanvir()">login</button><br>
+
+    <span id="rasult"> </span>
+
+    <script>
+      function tanvir(){
+          let userName=document.getElementById("userName").value;
+          let password=document.getElementById("password").value;
+
+          if(userName =="java" && password=="123456"){
+              document.getElementById("rasult").innerText ="welcome "+ userName;
+              document.getElementById("rasult").style.color="green";
+          }
+          else{
+            document.getElementById("rasult").innerText = "your password or username is incorrect";
+              document.getElementById("rasult") .style.color="red";
+          }
+
+      }
+    </script>
+  </body>
+</html>

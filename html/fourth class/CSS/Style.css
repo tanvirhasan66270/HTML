@@ -1,0 +1,52 @@
+/* #nav {
+  float: left;
+}
+#homeHeader {
+  
+  background-color: aqua;
+  width: 100%;
+  height: 10vh;
+}
+
+#nav ul{
+    float: left;
+}
+#nav ul,
+#nav li {
+  list-style: none;
+
+  color: blue;
+  width: 100%;
+  height: 10vh;
+} */
+/* a:hover {
+  color: red;
+  height: 10vh;
+  width: 100%;
+} */
+
+#homeHeader {
+  background-color: aquamarine;
+  height: 10vh;
+  width: 100%;
+}
+
+#nav ul,
+#nav li {
+  list-style: none;
+  display: flex;
+  float: left;
+  margin: 10px 5px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: aliceblue;
+}
+#nav a:hover {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  /* transition: width 2s, height 2s, color 2s, background-color 2s; */
+  }

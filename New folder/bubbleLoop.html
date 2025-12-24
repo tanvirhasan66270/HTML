@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = [50, 90, 540, 125, 90, 60, 40, 30, 5, -5, -2];
+      for (index = 0; index < number.length - 1; index++) {
+        for (j = 0; j < number.length - index - 1; j++) {
+          if (number[j] > number[j + 1]) {
+            let tamp = number[j];
+            number[j] = number[j + 1];
+            number[j + 1] = tamp;
+          }
+        }
+      }
+
+      document.writeln(number);
+    </script>
+  </body>
+</html>
