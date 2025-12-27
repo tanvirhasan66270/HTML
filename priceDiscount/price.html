@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let price = prompt("input price");
+      let unit = prompt("input unit");
+      let total = price * unit;
+      let discountPrice = (total * 2) / 100;
+      let finalPrice = total - discountPrice;
+      document.writeln(total);
+      document.writeln(discountPrice);
+
+      if (total >= 50) {
+        document.writeln(finalPrice);
+      }
+    </script>
+  </body>
+</html>
