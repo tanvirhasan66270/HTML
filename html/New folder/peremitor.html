@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">length</label>
+    <input type="text" id="length"/><br />
+
+    <label for="">Width</label>
+    <input type="text" id="width" oninput="tan()" /><br />
+
+    <label for="">Area</label>
+    <span id="area"></span><br />
+
+    <label for="">permeter</label>
+    <span id="permeter"></span><br />
+
+    <script>
+      function tan(){
+          let length=parseInt(document.getElementById("length").value);
+          let width=parseInt(document.getElementById("width").value);     
+
+
+
+          document.getElementById("area").innerHTML=length*width;
+          document.getElementById("permeter").innerHTML=2*(length+width);
+
+          }
+
+
+
+    
+    </script>
+  </body>
+</html>
