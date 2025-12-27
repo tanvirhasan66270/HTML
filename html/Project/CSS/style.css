@@ -1,0 +1,41 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.section {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+#serHead {
+  padding-bottom: 30px;
+}
+.card {
+  background-color: rgba(130, 107, 243, 0.01);
+  padding: 20px;
+  transition: all 0.25s ease;
+  box-shadow: var(box-shadow);
+}
+.card:hover {
+  box-shadow: none;
+  transform: translateY(10px);
+}
+#footer ol{
+  padding: 60px;
+  
+}
+#footer ul, li,a{
+  color: black;
+  text-decoration: none;
+  display: block;
+
+  
+  
+}
+#footer{
+  background-color: rgb(96, 98, 100);
+  padding-top: 5PX;
+}
+.project{
+  position: relative;
+  
+}
