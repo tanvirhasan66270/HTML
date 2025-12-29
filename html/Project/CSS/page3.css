@@ -1,27 +1,50 @@
-.profile-area{
-  padding: 80px ;  
+*{
+    background-color: black;
 }
-.card{
-    box-shadow: 0 0 30px rgba(0, 0, 0, 5);
-    overflow: hidden;
-    border-radius: 10px;
+.profile-area {
+  padding: 20px;
 }
-.img1 img{
-    height: 200px;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    width: 100%;
+.padding {
+  padding: 20px;
 }
-.img2 img{
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index:1;
-    width:140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 7px solid #fff;
-   
-    /* margin-top: 70px; */
+.card {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 5);
+  overflow: hidden;
+  border-radius: 10px;
+ 
+}
+.img1 img {
+  height: 200px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 100%;
+}
+.img2 img {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  z-index: 1;
+  top: -70px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 7px solid #fff;
+}
+.card:hover.img2 img {
+  border-color: darkcyan;
+  transition: 0.7s;
+}
+.text-center{
+    color: azure;
+}
+.main-text {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 0;
+  font-size: 15px;
+  padding: 10px;
+  margin: 0 0 20px;
+  color: aliceblue;
 }
