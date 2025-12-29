@@ -1,7 +1,9 @@
 * {
   margin: 0px;
   padding: 0px;
+  background-color: azure;
 }
+
 .section {
   padding-top: 80px;
   padding-bottom: 60px;
