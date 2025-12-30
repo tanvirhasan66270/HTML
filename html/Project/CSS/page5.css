@@ -1,0 +1,29 @@
+/* Tombol custom */
+    .btn-custom {
+      background-color: #ff6600 !important; /* warna dasar */
+      color: white;
+      border: none;
+      border-radius: 8px; /* sudut membulat */
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-custom:hover {
+      background-color: #e65c00; /* warna saat hover */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    /* Warna ikon */
+    .contact-icon {
+      color: #ff6600; /* warna ikon default */
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact-icon:hover {
+      color: #e65c00; /* warna ikon saat hover */
+      transform: scale(1.2); /* efek membesar */
+    }

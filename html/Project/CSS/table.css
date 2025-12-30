@@ -1,0 +1,21 @@
+body {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  padding-top: 50px;
+}
+.card {
+  border-radius: 10px;
+}
+.card-body {
+  padding: 2rem;
+}
+.card-title {
+  margin-bottom: 1.5rem;
+}
+.btn-primary {
+  background-color: #ff6f61;
+  border-color: #ff6f61;
+}
+.btn-primary:hover {
+  background-color: #e85c50;
+  border-color: #e85c50;
+}

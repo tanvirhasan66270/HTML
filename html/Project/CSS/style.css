@@ -3,7 +3,9 @@
   padding: 0px;
   background-color: azure;
 }
-
+#carouselExampleSlidesOnly{
+  padding-left: 8px;
+}
 .section {
   padding-top: 80px;
   padding-bottom: 60px;
@@ -22,15 +24,15 @@
   box-shadow: none;
   transform: translateY(10px);
 }
-.iconbox{
-width: 45px;
-height: 45px;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color:rgb(38, 188, 237);
-border-radius: 100%;
-color: azure;
+.iconbox {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(38, 188, 237);
+  border-radius: 100%;
+  color: azure;
 }
 /* .service{
   position: relative;
@@ -62,24 +64,20 @@ color: aliceblue;
   top: 0;
 } */
 
-
-#footer ol{
+/* #footer ol {
   padding: 60px;
-  
 }
-#footer ul, li,a{
+#footer ul,
+li,
+a {
   color: black;
   text-decoration: none;
   display: block;
-
-  
-  
 }
-#footer{
+#footer {
   background-color: rgb(96, 98, 100);
-  padding-top: 5PX;
-}
-.project{
+  padding-top: 5px;
+} */
+.project {
   position: relative;
-  
 }
