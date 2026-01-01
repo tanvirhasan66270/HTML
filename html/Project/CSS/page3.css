@@ -1,67 +1,112 @@
-* {
-  background-color: black;
-}
-.profile-area {
-  padding: 20px;
-}
-.padding {
-  padding: 20px;
-}
-.main {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 5);
-  overflow: hidden;
-  border-radius: 10px;
-  height: 300px;
-  overflow: hidden;
-}
-.img1 img {
-  width: 200px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  width: 100%;
-  height: 100px;
-}
-.img2 img {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 
-  z-index: 1;
-  top: -70px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 7px solid #fff;
-}
-.main:hover.img2 img {
-  border-color: darkcyan;
-  transition: 0.7s;
-}
-.text {
-  margin-top: -60px;
-}
-.text-center {
-  color: azure;
-}
-.main-text {
+.flip-card {
   
-  font-weight: 300;
-  padding-left: 0px;
-  margin-top: 0;
-  font-size: 15px;
-  padding: 10px;
-  margin: 0 0 20px;
-  color: aliceblue;
+  width: 300px;
+  height: 400px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+margin-right: 70px;
 }
-#mainCard {
-  align-items: center;
-  margin-left: 550px;
-  margin-right: 550px;
-  margin-bottom: 40px;
-}
-.PK {
-  border-radius: 100%;
 
-  width: 120px;
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+  background: linear-gradient(45deg, #c03483 0%, #518833 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+ 
+  color: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #333;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.waving-hand {
+  display: inline-block;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
 }

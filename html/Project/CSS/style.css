@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  background-color: azure;
+  
 }
 #carouselExampleSlidesOnly{
   padding-left: 8px;
@@ -32,8 +32,9 @@
   justify-content: center;
   background-color: rgb(38, 188, 237);
   border-radius: 100%;
-  color: azure;
+  color: rgb(17, 18, 18);
 }
+.iconbox:hover i{ text-decoration: none;}
 /* .service{
   position: relative;
   z-index: 2;

@@ -19,7 +19,5 @@ document.getElementById('registrationForm').addEventListener('submit', function(
                 }
             }
 
-            if (valid) {
-                feedback.innerHTML = '<p class="text-success">Registration successful!</p>';
-            }
+            
         });
