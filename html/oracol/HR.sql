@@ -1,53 +1,82 @@
-SELECT last_name , Email , hire_date , commission_pct , salary , job_id
-FROM employees;
+--select to_char (sysdate ,'DD-Month-yyyy')
+--select to_char (sysdate ,'Day-Month-yyyy')
+select to_char (sysdate ,'Day-Mon-yyyy')
+from dual;
 
-desc employees;
+select to_char (sysdate ,'HH12:mi')
+from dual;
 
+select to_char (sysdate, 'HH12:mi-am ')
+from dual;
 
-SELECT last_name as "Last Name" , Email as "Email" , hire_date as "Hire Date" , commission_pct as "Commission PCT" , salary as "Salary" , job_id as "Job ID"   
-FROM employees;
-
-select  'My fast name'||' '|| first_name||'  
-'|| 'And my Last name is'||' '||last_name as "Full name"
+select to_char (hire_date, ' DD-MM-YYYY'), to_char(hire_date ,'HH24:mi ')
 from employees;
 
-select DISTINCT last_name from employees;
-
-select DISTINCT first_name as " First Name" from employees;
-
-select DISTINCT  salary from employees;
-
-select DISTINCT job_id from employees; 
+select to_char ( hire_date ,'DDsp-MMsp-yyyysp'),
+to_char( hire_date,'hh24sp:misp pm ssss')
+from employees;
 
 
-select last_name , salary , Email
+select to_char ( hire_date ,'DDsp-MMsp-yyyysp'),
+to_char( hire_date,'hh24sp:misp pm ssss  ')
+from employees;
+
+select last_name , to_char (hire_date ,'DD-Mon-yyyy')
 from employees
---where salary between 2000 and 5000;
---where salary in(2000,5000,10000) and commission_pct between 0.3 and 0.5;
- where salary in ( 2000,5000,10000) and last_name like 'S%';
+where last_name< to_date 
 
--- where salary in ( 2000,5000,10000) or last_name like 'S%';
+select commission_pct,
+nvl(commission_pct,0),
+NVL2(commission_pct,salary+(salary*commission_pct),salary)
+from employees;
 
 
 
-select last_name , salary , Email
+
+
+
+
+
+
+select commission_pct,nvl( commission_pct,222)
+from employees;
+
+--select last_name ,job_id ,salary,
+-- case job_id when 'it_prog' than 1.*10 salary
+--   when 'st_clerk' than 1.*15 salary
+--   when 'sa_per' than 1.*20 salary
+--else salary end "revised_salary"
+--from employees;
+
+SELECT last_name ,job_id ,salary,
+ CASE job_id 
+    WHEN 'IT_PROG' THEN 1.10 *salary
+    WHEN 'ST_CLERK' THEN 1.15* salary
+    WHEN 'SA_REP' THEN 1.20 *salary
+ELSE salary END "REVISED_SALARY"
+FROM employees;
+
+
+select distinct (job_id)
+from employees;
+
+select department_id,count(department_id), max(salary),job_id
 from employees
-where salary BETWEEN 2000 and 3500 and last_name like '_%s%_';
+group by department_id,job_id
+order by department_id desc;
 
 
-select last_name , salary , Email
+select department_id,count(department_id), max(salary),job_id
 from employees
---where last_name='Chen';
-where lower (last_name)='chen';
+group by department_id,job_id
+order by 4;
 
-select last_name , salary , Email, hire_date
+
+select job_id ,sum(salary) payroll
 from employees
-where hire_date='05-feb-06'
-
-select last_name , salary , Email, commission_pct
- from employees
---where commission_pct is null;
-where commission_pct is not null;
+group by job_id
+having sum(salary)>13000 
+order by sum (salary);
 
 
 
@@ -55,6 +84,7 @@ where commission_pct is not null;
 
 
 
+                                   
 
 
 
