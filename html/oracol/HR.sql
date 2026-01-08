@@ -1,90 +1,50 @@
---select to_char (sysdate ,'DD-Month-yyyy')
---select to_char (sysdate ,'Day-Month-yyyy')
-select to_char (sysdate ,'Day-Mon-yyyy')
-from dual;
-
-select to_char (sysdate ,'HH12:mi')
-from dual;
-
-select to_char (sysdate, 'HH12:mi-am ')
-from dual;
-
-select to_char (hire_date, ' DD-MM-YYYY'), to_char(hire_date ,'HH24:mi ')
-from employees;
-
-select to_char ( hire_date ,'DDsp-MMsp-yyyysp'),
-to_char( hire_date,'hh24sp:misp pm ssss')
-from employees;
-
-
-select to_char ( hire_date ,'DDsp-MMsp-yyyysp'),
-to_char( hire_date,'hh24sp:misp pm ssss  ')
-from employees;
-
-select last_name , to_char (hire_date ,'DD-Mon-yyyy')
-from employees
-where last_name< to_date 
-
-select commission_pct,
-nvl(commission_pct,0),
-NVL2(commission_pct,salary+(salary*commission_pct),salary)
-from employees;
-
-
-
-
-
-
-
-
-
-select commission_pct,nvl( commission_pct,222)
-from employees;
-
---select last_name ,job_id ,salary,
--- case job_id when 'it_prog' than 1.*10 salary
---   when 'st_clerk' than 1.*15 salary
---   when 'sa_per' than 1.*20 salary
---else salary end "revised_salary"
---from employees;
-
-SELECT last_name ,job_id ,salary,
- CASE job_id 
-    WHEN 'IT_PROG' THEN 1.10 *salary
-    WHEN 'ST_CLERK' THEN 1.15* salary
-    WHEN 'SA_REP' THEN 1.20 *salary
-ELSE salary END "REVISED_SALARY"
-FROM employees;
-
-
-select distinct (job_id)
-from employees;
-
-select department_id,count(department_id), max(salary),job_id
-from employees
-group by department_id,job_id
-order by department_id desc;
-
-
-select department_id,count(department_id), max(salary),job_id
-from employees
-group by department_id,job_id
-order by 4;
-
-
-select job_id ,sum(salary) payroll
-from employees
-group by job_id
-having sum(salary)>13000 
-order by sum (salary);
-
-
-
-
-
-
-
-                                   
-
-
-
+ select EMPLOYEE_ID,FIRST_NAME, LAST_NAME,SALARY,
+ MANAGER_ID,LOCATION_ID 
+ from employees
+ NATURAL JOIN departments;
+ 
+ select  EMPLOYEE_ID,FIRST_NAME, LAST_NAME,
+ SALARY,JOB_TITLE,MIN_SALARY,
+ job_id, MAX_SALARY
+ from employees
+ NATURAL JOIN jobs
+ where salary>10000
+ order by salary,3 desc;
+ 
+ select EMPLOYEE_ID,FIRST_NAME,LAST_NAME,LOCATION_ID
+ from employees JOIN departments
+ using (department_id);
+ 
+ select  e.EMPLOYEE_ID,e.FIRST_NAME,e.LAST_NAME,
+ l.location_id, d.DEPARTMENT_ID
+ from employees e 
+ join departments d
+ on d.DEPARTMENT_ID
+ =e.department_id 
+ join locations l
+ on d.location_id=l.location_id;
+ 
+ 
+ SELECT e.last_name,e.salary, j.grade
+ from employees e join job_grades j
+ on e.salary
+ BETWEEN j.lowest_sal and j.highest_sal;
+ 
+ 
+ select e.last_name
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
