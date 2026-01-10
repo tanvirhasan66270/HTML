@@ -1,50 +1,83 @@
- select EMPLOYEE_ID,FIRST_NAME, LAST_NAME,SALARY,
- MANAGER_ID,LOCATION_ID 
+select location_id,street_address,city,state_province,country_name
+from locations
+natural join countries;
+
+select last_name ,department_id,department_name
+from employees 
+natural join departments ;
+
+select e.last_name ,e.department_id,d.department_name
+from employees e join departments d
+on (e.department_id=d.department_id);
+
+
+select e.last_name Employee,e.employee_id Emp#,
+m.last_name Manager,m.manager_id Mgr#
+from employees e join employees m
+on e.manager_id=m.employee_id
+order by 2 ;
+
+select last_name ,job_id,salary
+from employees
+where salary < (
+
+select max(salary) 
+from employees
+where job_id='IT_PROG');
+
+select salary,last_name,last_name
+from employees
+where salary=(
+
+select max(salary) from employees 
+ where salary <( select max(salary)from employees)
+ );
+ 
+ 
+ select first_name , first_name ,manager_id
  from employees
- NATURAL JOIN departments;
+ where manager_id=120;
  
- select  EMPLOYEE_ID,FIRST_NAME, LAST_NAME,
- SALARY,JOB_TITLE,MIN_SALARY,
- job_id, MAX_SALARY
+ select first_name , first_name ,manager_id,job_id
  from employees
- NATURAL JOIN jobs
- where salary>10000
- order by salary,3 desc;
+ where job_id in
+ ( select job_id
+ from employees
+ where manager_id=120)
+ ;
  
- select EMPLOYEE_ID,FIRST_NAME,LAST_NAME,LOCATION_ID
- from employees JOIN departments
- using (department_id);
+ select first_name , first_name ,manager_id,job_id
+ from employees
+ where job_id in
+ ( select job_id
+ from employees
+ where manager_id=120)
+ ;
  
- select  e.EMPLOYEE_ID,e.FIRST_NAME,e.LAST_NAME,
- l.location_id, d.DEPARTMENT_ID
- from employees e 
- join departments d
- on d.DEPARTMENT_ID
- =e.department_id 
- join locations l
- on d.location_id=l.location_id;
+ select department_id, min(salary)
+ from employees
+ group by department_id
+ HAVING MIN(salary)>(select min(salary)
+ from employees
+ where department_id=30);
  
- 
- SELECT e.last_name,e.salary, j.grade
- from employees e join job_grades j
- on e.salary
- BETWEEN j.lowest_sal and j.highest_sal;
- 
- 
- select e.last_name
- 
- 
- 
- 
- 
- 
- 
+-- select last_name,job_id,salary
+-- from employees
+-- where job_id in(
+-- select jod_id
+-- from employees
+-- where last_name='Taylor')
+-- and salary in(select salary
+-- from employees
+-- where last_name='Taylor');
  
  
  
+
+
+
+
  
- 
- 
- 
- 
- 
+
+
+
