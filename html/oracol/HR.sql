@@ -1,83 +1,42 @@
-select location_id,street_address,city,state_province,country_name
-from locations
-natural join countries;
+create table students(
+stu_id number(7)not null,
+stu_name varchar2(26) not null,
+stu_email varchar2(50) not null,
+stu_dob date,
+cell_no varchar2(11),
+blood_group varchar2(3),
 
-select last_name ,department_id,department_name
-from employees 
-natural join departments ;
-
-select e.last_name ,e.department_id,d.department_name
-from employees e join departments d
-on (e.department_id=d.department_id);
+constraint hr_students_stu_id_pk primary key(stu_id)
+);
+commit;
 
 
-select e.last_name Employee,e.employee_id Emp#,
-m.last_name Manager,m.manager_id Mgr#
-from employees e join employees m
-on e.manager_id=m.employee_id
-order by 2 ;
 
-select last_name ,job_id,salary
-from employees
-where salary < (
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(2,'10-Oct-1999','tanvirhasan@gmail.com','Md.Tanvir','01736996938','B+');
 
-select max(salary) 
-from employees
-where job_id='IT_PROG');
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(3,'14-jan-2002','sajinhasan@gmail.com','Md.sajin','01534303326','O+');
 
-select salary,last_name,last_name
-from employees
-where salary=(
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(4,'27-dec-2002','maymunasadia@gmail.com','MST.Sadia','01775911526','O+');
 
-select max(salary) from employees 
- where salary <( select max(salary)from employees)
- );
- 
- 
- select first_name , first_name ,manager_id
- from employees
- where manager_id=120;
- 
- select first_name , first_name ,manager_id,job_id
- from employees
- where job_id in
- ( select job_id
- from employees
- where manager_id=120)
- ;
- 
- select first_name , first_name ,manager_id,job_id
- from employees
- where job_id in
- ( select job_id
- from employees
- where manager_id=120)
- ;
- 
- select department_id, min(salary)
- from employees
- group by department_id
- HAVING MIN(salary)>(select min(salary)
- from employees
- where department_id=30);
- 
--- select last_name,job_id,salary
--- from employees
--- where job_id in(
--- select jod_id
--- from employees
--- where last_name='Taylor')
--- and salary in(select salary
--- from employees
--- where last_name='Taylor');
- 
- 
- 
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(5,'15-dec-1995','bodrulhasan@gmail.com','Md.Bodrul','01709628913','O+');
+
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(6,'03-jan-2000','daharanhossain@gmail.com','Md.Saharan hossain','01521522195','B-');
+
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(7,'05-jan-2001','juirani@gmail.com','MST.jui','01752255412','AB-');
+
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(8,sysdate-1500,'rehana@gmail.com','MST.Rehana','01752255413','AB-');
+
+insert into students(stu_id,stu_dob,stu_email,stu_name,cell_no,blood_group)
+VALUES(8,sysdate-1500,'rehana@gmail.com','MST.Rehana','01752255413','AB-');
 
 
 
 
- 
-
-
-
+commit;
