@@ -14,7 +14,8 @@ constraint imran_number_uq unique(cont_number)
 );
 
 
-create sequence imranss_value_input start with 1 
+create sequence imranss_value_input
+start with 1 
 increment by 1 
 maxvalue 99;
 
@@ -91,7 +92,7 @@ alter table robin
  select initcap (first_name)
  from employees;
  
- 
+  
  
   
  
