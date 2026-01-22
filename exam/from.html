@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myFrom">
+      <label for="name">Name</label> <br />
+      <input type="text" id="name" /> <br />
+
+      <label for="content">Contact</label> <br />
+      <input type="text" id="contact" /> <br />
+
+      <label for="remark">Remark</label> <br />
+      <input type="text" id="remark" /> <br />
+
+      <label for="sex">Sex</label> <br />
+      <input type="radio" name="sex" value="Male" />Male
+      <input type="radio" name="sex" value="Female" />Female
+      <input type="radio" name="sex" value="Others" />Others <br />
+
+      <label for="course">Others</label> <br />
+      <input type="checkbox" name="course" value="ND" />ND
+      <input type="checkbox" name="course" value="DDD" />DDD
+      <input type="checkbox" name="course" value="MATH" />MATH
+      <input type="checkbox" name="course" value="BANGLA" />BANGLA <br />
+
+      <label for="location">Location</label> <br />
+      <select name="" id="location">
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+        <option value="Bonani">Bonani</option>
+      </select>
+      <br />
+
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+
+        function submitFrom(event){
+            event.preventDefault()
+
+            let name=document.getElementById("name").value;
+            let contact=document.getElementById("contact").value;
+            let remark=document.getElementById("remark").value;
+            let location=document.getElementById("location").value;
+            let sex=document.querySelector('input[name="sex"]:checked');
+            let course=document.querySelectorAll('input[name="course"]:checked');
+
+            let courseValue=[];
+             for(let i=1;i<course.length;i++){
+             courseValue.push(course[i].value)}
+
+                let output="Name: "+name+'\n'
+                +"Contact:"+contact+'\n'
+                +"Remark:"+remark+'\n'
+                +"Location:"+location+'\n'
+                +"Contact:"+sex.value+'\n'
+                +"Course:"+courseValue+'\n';
+
+                let newWindows= window.open("",'_blank');
+                newWindows.document.writeln("<pre>"+output+"</pre>");
+
+
+        }let myFrom=document.getElementById("myFrom");
+        myFrom.addEventListener('submit',submitFrom);
+    </script>
+  </body>
+</html>
