@@ -19,10 +19,10 @@ from employees
 where first_name like 'S%';
 
 
-select e.salary,d.department_name
-from employees e join departments d
-on e.department_id=d.department_id
-where department_name like'Sales';
+--select e.salary,d.department_name
+--from employees e join departments d
+--on e.department_id=d.department_id
+--where department_name like'Sales';
 
 select avg(salary)
 from employees e join departments d
